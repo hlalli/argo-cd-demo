@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: {{ (print $.Template.BasePath "/configmap.yaml") }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . }}
       labels:
         run: demo-nubi
     spec:
